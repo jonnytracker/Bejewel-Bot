@@ -19,6 +19,19 @@ offsetY=0
 
 print("Starting Program ...")
 
+
+coin_pos = []
+coin_items = {
+            "cross": [],
+            "diamond": [],
+            "green": [],
+            "heart": [],
+            "red": [],
+            "star": [],
+            "yellow": [],            
+}
+
+
 # Load the templates
 try:
     # Load the main image in which you want to find template positions
