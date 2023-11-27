@@ -56,9 +56,12 @@ except Exception as e:
 if pyautogui.locateOnScreen('GameScreen.png', confidence=0.6) is not None:
         print("Game button found")
         template_position = pyautogui.locateOnScreen('GameScreen.png', confidence=0.6)
+
+        #get game location window X and Y
         offsetX = template_position[0]
         offsetY = template_position[1]
-         # Extract position information
+
+        # Extract position information
         left, top, width, height = template_position
         game_location = {'left': left, 'top': top, 'width': width, 'height': height}
         if pyautogui.locateOnScreen('StartButton.png', confidence=0.9) is not None:
@@ -109,6 +112,10 @@ def template_matching():
             maxOverlap=0.25,
             searchBox=None
         )
+        for i in range(len(matches['BBox'])):
+            if i in matches['BBox'].index:
+                coin_pos.append(matches['BBox'][i])
+                print(matches['TemplateName'][i])
 
         # Check if matches are found
         if not matches.empty:
@@ -116,7 +123,7 @@ def template_matching():
             random_match = matches.sample()
 
             # Extract information from the match
-            template_name = random_match.iloc[0]['TemplateName']
+            template_name = random_match.iloc[0][' ']
             bbox = random_match.iloc[0]['BBox']
 
             # Click on the center of the bounding box
