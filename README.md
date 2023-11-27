@@ -9,4 +9,4 @@ For educational purposes only
 
 Status: Currently clicks on random postion
 
-todo: implement matching logic (this is a working candy crush linker https://github.com/keytuff/CandyLinker)  perhaps can use this logic to match coins
+todo: implement matching logic 
