@@ -123,7 +123,7 @@ def template_matching():
             random_match = matches.sample()
 
             # Extract information from the match
-            template_name = random_match.iloc[0][' ']
+            template_name = random_match.iloc[0]['TemplateName']
             bbox = random_match.iloc[0]['BBox']
 
             # Click on the center of the bounding box
